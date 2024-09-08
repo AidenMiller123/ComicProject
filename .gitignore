@@ -1,0 +1,12 @@
+.vs/
+*.user
+*.suo
+*.vscode/
+
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
