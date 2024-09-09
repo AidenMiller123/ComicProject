@@ -1,4 +1,5 @@
 using ComicMarvelProject.Models;
+using ComicMarvelProject.Services.MarvelApi;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -17,7 +18,7 @@ namespace ComicMarvelProject.Views
         {
             try
             {
-                var marvelApi = new MarvelAPI.Marvel();
+                var marvelApi = new Marvel();
                 CharactersDataWrapper characterData = await marvelApi.GetCharcters(searchString);
                 Character character = characterData.Data.Results.FirstOrDefault();
 

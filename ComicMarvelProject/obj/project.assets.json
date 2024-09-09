@@ -6338,11 +6338,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicMarvelProject\\ComicMarvelProject.csproj",
+      "projectUniqueName": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicProject\\ComicMarvelProject\\ComicMarvelProject.csproj",
       "projectName": "ComicMarvelProject",
-      "projectPath": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicMarvelProject\\ComicMarvelProject.csproj",
+      "projectPath": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicProject\\ComicMarvelProject\\ComicMarvelProject.csproj",
       "packagesPath": "C:\\Users\\NHL54\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicMarvelProject\\obj\\",
+      "outputPath": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicProject\\ComicMarvelProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 24.1\\Components\\Offline Packages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FtLbGOOzj4A=",
+  "dgSpecHash": "vOfGbXVffLc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicMarvelProject\\ComicMarvelProject.csproj",
+  "projectFilePath": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicProject\\ComicMarvelProject\\ComicMarvelProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NHL54\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\NHL54\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

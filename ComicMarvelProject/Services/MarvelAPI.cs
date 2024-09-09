@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ComicMarvelProject.MarvelAPI
+namespace ComicMarvelProject.Services.MarvelApi
 {
     public class Marvel
     {
@@ -27,36 +27,54 @@ namespace ComicMarvelProject.MarvelAPI
                                                             IEnumerable<int>? Events = null,
                                                             IEnumerable<int>? Stories = null,
                                                             IEnumerable<OrderBy>? Order = null,
-                                                            int? Limit = null,
+                                                            int? Limit = 30,
                                                             int? Offset = null)
         {
             //We need a timestamp
             string timestamp = (DateTime.Now.ToUniversalTime() - new DateTime(1970, 1, 1)).TotalSeconds.ToString();
             //we need use a has to call the marvel api
-            string s = String.Format("{0}{1}{2}", timestamp, _privateKey, _publicKey);
+            string s = string.Format("{0}{1}{2}", timestamp, _privateKey, _publicKey);
 
             string hash = CreateHash(s);
 
-            //format the url string with search critieria
-            string requesetURL = String.Format(BASE_URL, "/characters?ts={0}&apikey={1}&hash={2}&name={3}", timestamp, _publicKey, hash, Name );
+			//format the url string with search critieria
+			string requestURL = $"{BASE_URL}/characters?ts={timestamp}&apikey={_publicKey}&hash={hash}";
 
-            var url = new Uri(requesetURL);
+			// Add query parameters if they exist
+			if (!string.IsNullOrEmpty(Name))
+				requestURL += $"&name={Name}";
+			if (!string.IsNullOrEmpty(NameStartsWith))
+				requestURL += $"&nameStartsWith={NameStartsWith}";
+			if (ModifiedSince.HasValue)
+				requestURL += $"&modifiedSince={ModifiedSince.Value.ToString("yyyy-MM-dd")}";
+			if (Comics != null && Comics.Any())
+				requestURL += $"&comics={string.Join(",", Comics)}";
+			if (Series != null && Series.Any())
+				requestURL += $"&series={string.Join(",", Series)}";
+			if (Events != null && Events.Any())
+				requestURL += $"&events={string.Join(",", Events)}";
+			if (Stories != null && Stories.Any())
+				requestURL += $"&stories={string.Join(",", Stories)}";
+			if (Order != null && Order.Any())
+				requestURL += $"&orderBy={string.Join(",", Order)}";
+			if (Limit.HasValue)
+				requestURL += $"&limit={Limit.Value}";
+			if (Offset.HasValue)
+				requestURL += $"&offset={Offset.Value}";
 
-            var response = await _client.GetAsync(url);
+			var url = new Uri(requestURL);
 
-            string json;
+			// Make the API call
+			var response = await _client.GetAsync(url);
 
-            using (var content = response.Content)
-            {
-                json = await content.ReadAsStringAsync();
-            }
+			string json = await response.Content.ReadAsStringAsync();
 
-            CharactersDataWrapper cdw = JsonConvert.DeserializeObject<CharactersDataWrapper>(json);
-            return cdw;
-        }
+			CharactersDataWrapper cdw = JsonConvert.DeserializeObject<CharactersDataWrapper>(json);
+			return cdw;
+		}
         private string CreateHash(string input)
         {
-            var hash = String.Empty;
+            var hash = string.Empty;
             using (MD5 md5Hash = MD5.Create())
             {
                 byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
