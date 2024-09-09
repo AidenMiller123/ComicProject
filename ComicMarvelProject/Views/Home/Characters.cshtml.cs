@@ -22,15 +22,15 @@ namespace ComicMarvelProject.Views.Home
         {
             try
             {
-                var marvelApi = new MarvelAPI.Marvel();
-                CharactersDataWrapper characterData = await marvelApi.GetCharcters(searchString);
-                Character character = characterData.Data.Results.FirstOrDefault();
+                //var marvelApi = new Marvel();
+                //CharactersDataWrapper characterData = await marvelApi.GetCharcters(searchString);
+                //Character character = characterData.Data.Results.FirstOrDefault();
 
-                CharacterViewModel = new CharacterComicViewModel
-                {
-                    Character = character,
-                    AttruibutionText = characterData.Attributiontext
-                };
+                //CharacterViewModel = new CharacterComicViewModel
+                //{
+                //    Character = character,
+                //    AttruibutionText = characterData.Attributiontext
+                //};
             }
             catch (Exception ex)
             {

@@ -1,4 +1,5 @@
 ﻿using ComicMarvelProject.Models;
+using ComicMarvelProject.Services.MarvelApi;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComicMarvelProject.Controllers
@@ -10,9 +11,19 @@ namespace ComicMarvelProject.Controllers
             return View();
         }
 
-        public IActionResult Hero()
+        public IActionResult Charcters()
         {
             return View();
+        }
+
+        public async Task<IActionResult> Characters(string characterName = null)
+        {
+            var _marvel = new Marvel();
+            CharactersDataWrapper CharacterModel = await _marvel.GetCharcters(NameStartsWith: characterName);
+            List<Character> Characters = CharacterModel.Data.Results;
+            
+            
+            return View(Characters);
         }
     }
 }

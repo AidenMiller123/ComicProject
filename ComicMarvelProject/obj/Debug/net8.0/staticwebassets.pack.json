@@ -21,8 +21,28 @@
       "PackagePath": "staticwebassets\\images\\MarvelHomePageImage.jpg"
     },
     {
+      "Id": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicProject\\ComicMarvelProject\\wwwroot\\images\\comic-background-1.jpg",
+      "PackagePath": "staticwebassets\\images\\comic-background-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicProject\\ComicMarvelProject\\wwwroot\\images\\comic-background.jpg",
+      "PackagePath": "staticwebassets\\images\\comic-background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicProject\\ComicMarvelProject\\wwwroot\\images\\comic-header.jpg",
+      "PackagePath": "staticwebassets\\images\\comic-header.jpg"
+    },
+    {
       "Id": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicProject\\ComicMarvelProject\\wwwroot\\images\\gwen-stacy-death.jpg",
       "PackagePath": "staticwebassets\\images\\gwen-stacy-death.jpg"
+    },
+    {
+      "Id": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicProject\\ComicMarvelProject\\wwwroot\\images\\placeholder.jpg",
+      "PackagePath": "staticwebassets\\images\\placeholder.jpg"
+    },
+    {
+      "Id": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicProject\\ComicMarvelProject\\wwwroot\\images\\wolverine.jpg",
+      "PackagePath": "staticwebassets\\images\\wolverine.jpg"
     },
     {
       "Id": "C:\\Users\\NHL54\\source\\repos\\ComicMarvelProject\\ComicProject\\ComicMarvelProject\\wwwroot\\images\\xmen25.jpg",

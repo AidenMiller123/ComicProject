@@ -19,9 +19,10 @@ html {
 
 body {
     margin-bottom: 60px;
-    background: linear-gradient( rgba(255, 255, 255, 0.5), /* Adjust the color and opacity as needed */
-    rgba(255, 255, 255, 0.3) ), url('/images/MarvelHomePageImage.jpg');
-    background-size: 50%;
+    background: linear-gradient( rgba(0, 0, 0, 0.2), /* Adjust the color and opacity as needed */
+    rgba(0, 0, 0, 0.2) ), url('/images/comic-background-1.jpg');
+    background-size: 100%;
+    image-rendering: optimizeQuality;
     background-position: 50% 50%;
 }
 
@@ -42,6 +43,11 @@ body {
 
 .navbar {
     background-color: darkred;
+    line-height: 25px;
+}
+
+.nav-link {
+    font-family: 'Comic Sans MS';
 }
 
 .characterHeader{
@@ -59,6 +65,7 @@ body {
     font-weight: bold;
     text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8), -3px -3px 2px rgba(0, 0, 0, 0.8), 3px -3px 2px rgba(0, 0, 0, 0.8), -3px 3px 2px rgba(0, 0, 0, 0.8);
 }
+
 .xmenComic{
      width: 100%; 
     max-width: 250px; 
@@ -90,4 +97,60 @@ body {
     font-weight: bold;
     text-shadow: 3px 3px 2px rgba(255, 255, 255, 0.8), /* White shadow */
     -3px -3px 2px rgba(255, 255, 255, 0.8), 3px -3px 2px rgba(255, 255, 255, 0.8), -3px 3px 2px rgba(255, 255, 255, 0.8);
+}
+
+.footerDescription {
+    font-size: 11px;
+    color: snow;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1;
+}
+
+footer{
+    background-color: darkred;
+    padding: 5px 0;
+    text-align: center;
+    position: fixed;
+}
+
+.card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Make sure the card body takes the remaining space */
+.card-body {
+    flex: 1;
+}
+
+/* Ensure the cards have equal height in the row */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    display: flex;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 200px; 
+    overflow: hidden; 
 }
