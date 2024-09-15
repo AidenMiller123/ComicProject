@@ -30,7 +30,7 @@ namespace ComicMarvelProject.Models
         public double IssueNumber { get; set; }
         public string VariantDescription { get; set; }
         public string Description { get; set; }
-        public DateTime? Modified { get; set; }
+        public string? Modified { get; set; }
         public string Isbn { get; set; }
         public string Upc { get; set; }
         public string DiamondCode { get; set; }
@@ -58,7 +58,7 @@ namespace ComicMarvelProject.Models
     public class ComicDate
     {
         public string Type { get; set; }
-        public DateTime? Date { get; set; }
+        public string? Date { get; set; }
     }
 
     public class ComicPrice
