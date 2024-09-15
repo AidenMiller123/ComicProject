@@ -26,16 +26,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\NHL54\source\repos\ComicMarvelProject\ComicProject\ComicMarvelProject
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Comics/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29taWNzXEluZGV4LmNzaHRtbA==
+[C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Comics/ComicsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29taWNzXENvbWljc0xpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Home/Characters.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGFyYWN0ZXJzLmNzaHRtbA==
+[C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Home/Character.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGFyYWN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Home/CharactersList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGFyYWN0ZXJzTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Home/Index.cshtml]

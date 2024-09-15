@@ -1,7 +1,14 @@
+using ComicMarvelProject.Services.MarvelApi;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddHttpClient<Marvel>();
+builder.Services.AddTransient<Marvel>();
+
+
+// Add services to the container.
+
 
 var app = builder.Build();
 
@@ -20,8 +27,10 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+
 app.MapControllerRoute(
-    name: "deafult",
+    name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
