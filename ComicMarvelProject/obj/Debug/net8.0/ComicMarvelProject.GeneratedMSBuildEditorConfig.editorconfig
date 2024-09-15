@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\NHL54\source\repos\ComicMarvelProject\ComicProject\ComicMarvelProject
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Comics/Comic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29taWNzXENvbWljLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Comics/ComicsList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29taWNzXENvbWljc0xpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

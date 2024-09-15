@@ -100,6 +100,30 @@ namespace ComicMarvelProject.Services.MarvelApi
             return cdw;
         }
 
+		public async Task<ComicDataWrapper> GetComic(int Id)
+		{
+			string timestamp = (DateTime.Now.ToUniversalTime() - new DateTime(1970, 1, 1)).TotalSeconds.ToString();
+
+			string s = string.Format("{0}{1}{2}", timestamp, _privateKey, _publicKey);
+
+			string hash = CreateHash(s);
+
+			string requestURL = $"{BASE_URL}/comics/{Id}?ts={timestamp}&apikey={_publicKey}&hash={hash}";
+
+			var response = await _client.GetAsync(new Uri(requestURL));
+
+			if (!response.IsSuccessStatusCode)
+			{
+				return null;
+			}
+
+			string json = await response.Content.ReadAsStringAsync();
+
+			ComicDataWrapper cdw = JsonConvert.DeserializeObject<ComicDataWrapper>(json);
+
+			return cdw;
+		}
+
         public async Task<ComicDataWrapper> GetComicForCharacter(int characterId)
 		{
 			string timestamp = (DateTime.Now.ToUniversalTime() - new DateTime(1970, 1, 1)).TotalSeconds.ToString();
