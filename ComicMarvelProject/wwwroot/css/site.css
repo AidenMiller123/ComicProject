@@ -1,20 +1,22 @@
+/* HTML */
+
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
@@ -25,6 +27,8 @@ body {
     image-rendering: optimizeQuality;
     background-position: 50% 50%;
 }
+
+/* Home Page*/
 
 .HomePageHeader {
     font-size: 50px;
@@ -44,6 +48,35 @@ body {
     -3px -3px 2px rgba(255, 255, 255, 0.8), 3px -3px 2px rgba(255, 255, 255, 0.8), -3px 3px 2px rgba(255, 255, 255, 0.8);
 }
 
+/* Search */
+
+.searchTitle {
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.search-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 60%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.SearchBtn {
+    background-color: darkred;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    border-color: darkred;
+}
+
+.search-result-container {
+    padding-left: 100px;
+}
+
+/* Nav Bar */
+
 .navbar {
     background-color: darkred;
     line-height: 25px;
@@ -58,80 +91,11 @@ body {
     padding-top: 5px;
 }
 
-.navbar-brand{
+.navbar-brand {
     font-family: fantasy;
 }
 
-.characterHeader {
-    font-size: 70px;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    color: snow;
-    font-weight: bold;
-    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8), -3px -3px 2px rgba(0, 0, 0, 0.8), 3px -3px 2px rgba(0, 0, 0, 0.8), -3px 3px 2px rgba(0, 0, 0, 0.8);
-}
-
-.comicHeader{
-    font-size: 70px;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    color: snow;
-    font-weight: bold;
-    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8), -3px -3px 2px rgba(0, 0, 0, 0.8), 3px -3px 2px rgba(0, 0, 0, 0.8), -3px 3px 2px rgba(0, 0, 0, 0.8);
-}
-
-.xmenComic{
-     width: 100%; 
-    max-width: 250px; 
-    height: auto; 
-}
-
-.comicContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.titleComic{
-    color: snow;
-    font-weight: bold;
-    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8), -3px -3px 2px rgba(0, 0, 0, 0.8), 3px -3px 2px rgba(0, 0, 0, 0.8), -3px 3px 2px rgba(0, 0, 0, 0.8);
-}
-
-.detailsComic {
-    color: snow;
-    font-weight: bold;
-    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8), -3px -3px 2px rgba(0, 0, 0, 0.8), 3px -3px 2px rgba(0, 0, 0, 0.8), -3px 3px 2px rgba(0, 0, 0, 0.8);
-}
-
-.searchTitle {
-    font-size: 30px;
-    color: black;
-    font-weight: bold;
-    text-shadow: 3px 3px 2px rgba(255, 255, 255, 0.8), /* White shadow */
-    -3px -3px 2px rgba(255, 255, 255, 0.8), 3px -3px 2px rgba(255, 255, 255, 0.8), -3px 3px 2px rgba(255, 255, 255, 0.8);
-}
-
-.footerDescription {
-    font-size: 11px;
-    color: snow;
-    font-weight: bold;
-    margin: 0;
-    line-height: 1;
-}
-
-footer{
-    background-color: darkred;
-    padding: 5px 0;
-    text-align: center;
-    position: fixed;
-}
-
-.card-footer-comic {
-    font-size: 12px;
-    color: white;
-    margin-bottom: 5px;
-    white-space: nowrap;
-}
+/* Base Card */
 
 .card-text {
     display: -webkit-box;
@@ -153,35 +117,26 @@ footer{
     flex-direction: column;
     height: 100%;
     max-height: 380px;
+    border-radius: 15px;
+    border-color: black;
+    border-width: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
 }
 
-.card-comicList {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Center content vertically */
-    align-items: center;
-    background-image: linear-gradient(to right, red,black);
-    height: 100%;
-    max-height: 100%;
-    width: 12rem;
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s;
 }
 
-.card-title{
+.card-title {
     padding-left: 5px;
     padding-top: 5px;
     color: white;
-}
-
-.card-title-comic {
-    padding-left: 5px;
-    padding-top: 5px;
-    color: white;
-    font-size: 13px;
-    font-family: "Anton SC", sans-serif;
     text-decoration: solid;
+    font-family: "Anton SC", sans-serif;
 }
 
-/* Make sure the card body takes the remaining space */
 .card-body {
     flex: 1;
     padding: 0;
@@ -190,30 +145,22 @@ footer{
     padding-bottom: 20px;
 }
 
-.card-section{
-    margin-bottom: 5px;
+.card-img {
+    width: 100%;
+    height: 100%;
+    max-height: 126.9px;
+    object-fit: contain;
+    background-color: black;
 }
 
-.creators-section,
-.characters-section {
-    min-height: 50px; /* Reserve space even when empty */
+.card-img-wrapper {
+    width: 100%;
+    height: 200px;
+    min-height: 100px;
+    max-height: 157px;
+    overflow: hidden;
 }
 
-.card-body-comic {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0;
-    padding-left: 10px;
-    padding-right: 18px;
-    min-height: 235px; /* Adjust to fit your design */
-    min-width: 12rem;
-    max-width: 12rem;
-    background-color: rgba(51, 51, 51, 0.5);
-}
-
-/* Ensure the cards have equal height in the row */
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -224,68 +171,46 @@ footer{
     display: flex;
 }
 
-.card-img {
-    width: 100%;
-    height: 100%;
-    max-height: 126.9px;
-    object-fit: contain;
-    background-color: black;
-
+.footerDescription {
+    font-size: 11px;
+    color: snow;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1;
 }
 
-.card-img-ComicList {
-    width: auto;
-    height: 120%;
-    max-height: 150.9px;
-    object-fit: contain;
-    background-color: black;
+footer {
+    background-color: darkred;
+    padding: 5px 0;
+    text-align: center;
+    position: fixed;
 }
-   
-.card-img-ComicList[src*="image_not_available"] {
-     display: block;
-    margin: 0 auto; /* Center the image horizontally */
-    width: 100%; /* Set to 100% of the wrapper */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 550px; /* Increase the size but limit the width */
-    max-height: 550px; 
- }
+
+
+/* Characters */
+
+.characterHeader {
+    font-size: 70px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: snow;
+    font-weight: bold;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8), -3px -3px 2px rgba(0, 0, 0, 0.8), 3px -3px 2px rgba(0, 0, 0, 0.8), -3px 3px 2px rgba(0, 0, 0, 0.8);
+}
 
 .card-img-character {
     width: 100%; /* Adjust width to fill the container */
     height: 100%; /* Adjust height to fill the container */
-    background-size: cover; /* Ensures the image covers the entire area */
+    background-size: contain; /* Ensures the image covers the entire area */
     background-position: center; /* Centers the image within the box */
     background-repeat: no-repeat; /* Prevents tiling of the background image */
     border: 3px solid black; /* Adds a border around the image */
-    background-color: black;  
-}
-
-.card-img-wrapper {
-    width: 100%;
-    height: 200px; 
-    min-height: 100px;
-    max-height: 157px;
-    overflow: hidden;
+    background-color: black;
 }
 
 .card-img-wrapper-character {
     width: 400px; /* Fixed width for the wrapper */
     height: 200px; /* Fixed height for the wrapper */
     overflow: hidden;
-}
-
-.card-img-wrapper-ComicList {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 200px;
-    min-height: 100px;
-    max-height: 157px;
-    overflow: hidden;
-    max-width: 105px;
-    margin-bottom: 7px;
-    margin-top: 7px;
 }
 
 .Character-header-container {
@@ -308,6 +233,127 @@ footer{
     padding-left: 10px;
 }
 
+/* Comics */
+
+.comicHeader {
+    font-size: 70px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: snow;
+    font-weight: bold;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8), -3px -3px 2px rgba(0, 0, 0, 0.8), 3px -3px 2px rgba(0, 0, 0, 0.8), -3px 3px 2px rgba(0, 0, 0, 0.8);
+}
+
+.comicContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.titleComic {
+    color: snow;
+    font-weight: bold;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8), -3px -3px 2px rgba(0, 0, 0, 0.8), 3px -3px 2px rgba(0, 0, 0, 0.8), -3px 3px 2px rgba(0, 0, 0, 0.8);
+}
+
+.detailsComic {
+    color: snow;
+    font-weight: bold;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8), -3px -3px 2px rgba(0, 0, 0, 0.8), 3px -3px 2px rgba(0, 0, 0, 0.8), -3px 3px 2px rgba(0, 0, 0, 0.8);
+}
+
+.card-comicList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Center content vertically */
+    align-items: center;
+    background-image: linear-gradient(to right, red,black);
+    height: 100%;
+    max-height: 100%;
+    width: 12rem;
+    border-radius: 15px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.card-title-comic {
+    padding-left: 5px;
+    padding-top: 5px;
+    color: white;
+    font-size: 13px;
+    font-family: "Anton SC", sans-serif;
+    text-decoration: solid;
+}
+
+.card-comicList:hover {
+   transform: scale(1.05);
+   transition: transform 0.5s;
+}
+
+.card-section {
+    margin-bottom: 5px;
+}
+
+.creators-section,
+.characters-section {
+    min-height: 50px; /* Reserve space even when empty */
+}
+
+.card-body-comic {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 18px;
+    min-height: 235px; /* Adjust to fit your design */
+    min-width: 12rem;
+    max-width: 12rem;
+    background-color: rgba(51, 51, 51, 0.3);
+}
+
+.card-footer-comic {
+    font-size: 12px;
+    color: white;
+    margin-bottom: 5px;
+    white-space: nowrap;
+}
+
+.card-img-ComicList {
+    width: auto;
+    height: 120%;
+    max-height: 150.9px;
+    object-fit: contain;
+    background-color: black;
+}
+
+.card-img-wrapper-ComicList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    min-height: 100px;
+    max-height: 157px;
+    overflow: hidden;
+    max-width: 105px;
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+
+.card-img-ComicList[src*="image_not_available"] {
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+  width: 100%; /* Set to 100% of the wrapper */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 550px; /* Increase the size but limit the width */
+  max-height: 550px;
+}
+
 .comic-Text-Description {
     color: white;
     font-size: 12px; /* Adjust the font size as needed */
@@ -320,6 +366,12 @@ footer{
     min-height: 50px;
 }
 
-.comic-card-details{
+.comic-card-details {
     font-weight: bold;
+}
+
+.xmenComic {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
 }

@@ -1,0 +1,15 @@
+﻿@model ComicMarvelProject.Models.Comic
+@{
+		ViewData["Title"] = "Comic";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="Character-header-container">
+	<div class="card-img-wrapper-character">
+		<img class="card-img-character" style="background-image: url('@($"{Model.Thumbnail.Path}.{Model.Thumbnail.Extension}")');" />
+	</div>
+	<div>
+		<h2 class="card-title character-name">@Model.Title</h2>
+		<h2 class="card-text character-description" style="padding-left: 10px;">@Model.Description</h2>
+	</div>
+</div>

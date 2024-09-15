@@ -15,15 +15,15 @@
 	<h1 class="comicHeader">Comics</h1>
 </div>
 
-<div class="container">
+<div class="container search-container">
 	<div class="text-center">
 		<form method="get" asp-action="ComicsList">
 			<div class="">
 				<h3 class="searchTitle"> Seach for Comic</h3>
-				<input class="form-control form-control-sm w-50 mx-auto mt-4" name="comicTitle"placeholder="Comic Title" value=""/>
+				<input class="form-control form-control-sm w-50 mx-auto" name="comicTitle"placeholder="Comic Title" value=""/>
 			</div>
 			<div class="p-2">
-				<button class="comicSearchBtn btn btn-primary btn-sm">Search</button>
+				<button class="SearchBtn btn  btn-sm">Search</button>
 			</div>
 		</form>
 	</div>
@@ -33,7 +33,7 @@
 
 @if (Model != null && Model.Count > 0)
 {
-	<div class="container">
+	<div class="container search-result-container">
 		<div class="row row-cols-3 row-cols-md-4 row-cols-lg-5">
 			@foreach (var comic in Model)
 			{
@@ -47,7 +47,7 @@
 
 				<div class="col mb-4">
 					<div class="card-comicList" style="@((string.IsNullOrEmpty(comic.Description) ? "max-height:100%;" : "")); width: 12rem;">
-						<a class="card-title-comic text-center">@comic.Title</a>
+						<a class="card-title-comic text-center" asp-controller="Comics" asp-action="Comic" asp-route-Id="@comic.Id">@comic.Title</a>
 						<div class="card-img-wrapper-ComicList">
 							<img src="@($"{comic.Thumbnail.Path}.{comic.Thumbnail.Extension}")"
 								 class="card-img-ComicList" />

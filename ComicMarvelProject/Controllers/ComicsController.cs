@@ -26,5 +26,14 @@ namespace ComicMarvelProject.Controllers
 
             return View(Comics);
         }
+
+        [HttpGet("Comics/Comic/{id}")]
+        public async Task<IActionResult> Comic(int id)
+        {
+            ComicDataWrapper ComicModel = await _marvel.GetComic(id);
+            Comic Comic = ComicModel.Data.Results[0];
+
+            return View(Comic);
+        }
     }
 }
