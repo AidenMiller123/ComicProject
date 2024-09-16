@@ -32,7 +32,7 @@ namespace ComicMarvelProject.Models
         public int? StartYear { get; set; }
         public int? EndYear { get; set; }
         public string Rating { get; set; }
-        public DateTime? Modified { get; set; }
+        public string? Modified { get; set; }
         public Image Thumbnail { get; set; }
         public ComicList Comics { get; set; }
         public StoryList Stories { get; set; }

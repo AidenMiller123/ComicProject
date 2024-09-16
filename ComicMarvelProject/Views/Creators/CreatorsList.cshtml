@@ -1,0 +1,27 @@
+﻿@using ComicMarvelProject.Models
+@using ComicMarvelProject.Views
+@model List<Creator>
+@{
+	ViewData["Title"] = "Creators";
+}
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Caveat:wght@400..700&family=Ga+Maamli&family=Londrina+Shadow&display=swap" rel="stylesheet">
+</head>
+
+<div class="text-center">
+	<h1 class="creatorsHeader">Creators</h1>
+</div>
+
+<div class="container search-container">
+	<div class="text-center">
+		<form method="get" asp-action="CreatorsList">
+			<div class="">
+				<h3 class="searchTitle"> Seach for Creator</h3>
+				<input class="form-control form-control-sm w-50 mx-auto" name="creatorName" placeholder="Creator Name" value=""/>
+			</div>
+			<div class="p-2">
+				<button class="SearchBtn btn  btn-sm">Search</button>
+			</div>
+		</form>
+	</div>
+</div>

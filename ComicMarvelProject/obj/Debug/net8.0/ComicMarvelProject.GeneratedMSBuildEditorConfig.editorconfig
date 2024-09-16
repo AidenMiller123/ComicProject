@@ -34,8 +34,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29taWNzXENvbWljc0xpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Creators/CreatorsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JlYXRvcnNcQ3JlYXRvcnNMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Events/EventsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEV2ZW50c0xpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Home/Character.cshtml]
@@ -58,8 +66,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Series/SeriesList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VyaWVzXFNlcmllc0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/Stories/StoriesList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Rvcmllc1xTdG9yaWVzTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NHL54/source/repos/ComicMarvelProject/ComicProject/ComicMarvelProject/Views/_ViewImports.cshtml]

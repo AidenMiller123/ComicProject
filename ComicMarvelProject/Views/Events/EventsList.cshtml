@@ -1,0 +1,102 @@
+﻿@using ComicMarvelProject.Models
+@using ComicMarvelProject.Views
+@model List<Event>
+@{
+	ViewData["Title"] = "Events";
+}
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Caveat:wght@400..700&family=Ga+Maamli&family=Londrina+Shadow&display=swap" rel="stylesheet">
+</head>
+
+<div class="text-center">
+	<h1 class="eventsHeader">Events</h1>
+</div>
+
+
+<div class="container search-container">
+	<div class="text-center">
+		<form method="get" asp-action="EventsList">
+			<div class="">
+				<h3 class="searchTitle"> Search for Event</h3>
+				<input class="form-control form-control-sm w-50 mx-auto" name="eventTitle" placeholder="Event Title" value=""/>
+			</div>
+			<div class="p-2">
+				<button class="SearchBtn btn  btn-sm">Search</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+@if (Model != null && Model.Count > 0)
+{
+	<div class="container search-result-container">
+		<div class="row row-cols-3 row-cols-md-4 row-cols-lg-5">
+			@foreach(var Event in Model)
+			{
+				if (string.IsNullOrEmpty(Event.Description) &&
+				(Event.Stories?.Available ?? 0) == 0 &&
+				(Event.Characters?.Available ?? 0) == 0 &&
+				(Event.Comics?.Available ?? 0) == 0)
+				{
+					continue; // Skip this Event if all conditions are met
+				}
+
+				<div class="col mb-4">
+					<div class="card-eventsList" style="@((string.IsNullOrEmpty(Event.Description) ? "max-height:100%;" : "")); width: 12rem;">
+						<a class="card-title-events text-center" asp-controller="Events" asp-action="Event" asp-route-Id="@Event.Id">@Event.Title</a>
+						<div class="card-img-wrapper-EventsList">
+							<img src="@($"{Event.Thumbnail.Path}.{Event.Thumbnail.Extension}")"
+								 class="card-img-EventsList" />
+						</div>
+						<div class="card-body-events">
+							<div>
+								<div class="card-section  description-section-events">
+									<span class="card-text event-card-details">Description: </span>
+									@if(!string.IsNullOrEmpty(Event.Description))
+									{
+										<span class="event-Text-Description card-text card-text-small"> @Event.Description</span>
+									}
+									else
+									{
+										<span class="event-Text-Description-None card-text card-text-small"> No Description Available</span>
+									}
+								</div>
+								<div class="card-section  event-card-details creators-section-events">
+									<span class="card-text event-card-details">Creators: </span>
+									@if(Event.Creators.Items.Any())
+									{
+										@foreach(var creator in Event.Creators.Items.Take(4))
+										{
+											<span class="card-text card-text-small">* @creator.Name | @creator.Role</span>
+										}
+										
+									}
+									else
+									{
+										<span class="event-Text-Description-None card-text card-text-small"> No Creators Available</span>
+									}
+								</div>
+								<div class="card-section  event-card-details characters-section-events">
+									<span class="card-text event-card-details">Characters: </span>
+									@if(Event.Characters.Items.Any())
+									{
+										@foreach(var character in Event.Characters.Items.Take(4))
+										{
+											<span class="card-text card-text-small">* @character.Name</span>
+										}
+									}
+									else
+									{
+										<span class="event-Text-Description-None card-text card-text-small"> No Characters Available</span>
+									}
+								</div>
+							</div>
+							<a class="card-text card-text-small moreDetails-section" href="@Event.Urls.First().url" target="_blank">More Details</a>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+}

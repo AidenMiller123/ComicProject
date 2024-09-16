@@ -54,40 +54,52 @@
 						</div>
 						<div class="card-body-comic">
 							<div>
-								<div class="card-section">
+								<div class="card-section description-section-comic">
 									<span class="card-text comic-card-details">Description:</span>
-									<span class="comic-Text-Description">
 										@if (@comic.TextObjects.Any())
 										{
-											@comic.TextObjects.FirstOrDefault().Text;
+											<span class="comic-Text-Description"> @comic.TextObjects.FirstOrDefault().Text;</span>
 										}
 										else
 										{
-											@comic.Description;
+											<span class="card-text card-text-small comic-Text-Description-None">No Description Available</span>
 										}
-									</span>
 								</div>
 								<div class="card-section creators-section">
 									<span class="card-text comic-card-details">Creators:</span>
-									@foreach(var creator in comic.Creators.Items.Take(2))
+									@if(@comic.Creators.Items.Any()){
+										@foreach(var creator in comic.Creators.Items.Take(2))
+										{
+											<span class="card-text card-text-small">* @creator.Name - @creator.Role</span>
+										}
+									}
+									else
 									{
-										<span class="card-text card-text-small">* @creator.Name - @creator.Role</span>
+										<span class="card-text card-text-small">No Creators Available</span>
 									}
 								</div>
 								<div class="card-section characters-section">
 									<span class="card-text comic-card-details">Characters:</span>
-									@foreach(var character in comic.Characters.Items.Take(2))
+									@if(@comic.Characters.Items.Any()){
+										@foreach(var character in comic.Characters.Items.Take(2))
+										{
+											<span class="card-text card-text-small">* @character.Name</span>
+										}
+									}
+									else
 									{
-										<span class="card-text card-text-small">* @character.Name</span>
+										<span class="card-text card-text-small">No Characters Available</span>
 									}
 								</div>
-								
-							</div>
 
-							<div class="card-footer-comic">
-								<span><span class="comic-card-details">Issue:</span> #@comic.IssueNumber</span>
-								<span> | </span>
-								<span><span class="comic-card-details">Pages:</span> @comic.PageCount pgs.</span>
+								<div class="card-section info-section-comic">
+									<span class="card-text comic-card-details">Info</span>
+									<span class="card-text card-text-small">Issue: #@comic.IssueNumber</span>
+									<span class="card-text card-text-small">Pages: @comic.PageCount pgs.</span>
+									<span class="card-text card-text-small">Price: $@comic.Prices.First().Price</span>
+								</div>
+
+								<a class="card-text card-text-small moreDetails-section" href="@comic.Urls.First().url" target="_blank">More Details</a>
 							</div>
 						</div>
 					</div>

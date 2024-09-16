@@ -29,7 +29,7 @@ namespace ComicMarvelProject.Models
         public string Description { get; set; }
         public string ResourceURI { get; set; }
         public List<Url> Urls { get; set; }
-        public DateTime? Modified { get; set; }
+        public string? Modified { get; set; }
         public DateTime? Start { get; set; }
         public DateTime? End { get; set; }
         public Image Thumbnail { get; set; }
