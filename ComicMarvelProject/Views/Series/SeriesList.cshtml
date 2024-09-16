@@ -1,0 +1,121 @@
+﻿@using ComicMarvelProject.Models
+@using ComicMarvelProject.Views
+@model List<Series>
+@{
+	ViewData["Title"] = "Series";
+}
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Caveat:wght@400..700&family=Ga+Maamli&family=Londrina+Shadow&display=swap" rel="stylesheet">
+</head>
+
+
+<div class="text-center">
+	<h1 class="seriesHeader">Series</h1>	
+</div>
+
+<div class="container search-container">
+	<div class="text-center">
+		<form method="get" asp-action="SeriesList">
+			<div class="">
+				<h3 class="searchTitle"> Seach for Series</h3>
+				<input class="form-control form-control-sm w-50 mx-auto" name="seriesTitle" placeholder="Series Title" value=""/>
+			</div>
+			<div class="p-2">
+				<button class="SearchBtn btn  btn-sm">Search</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+@if (Model != null && Model.Count > 0)
+{
+	<div class="container search-result-container">
+		<div class="row row-cols-3 row-cols-md-4 row-cols-lg-5">
+			@foreach (var series in Model)
+			{
+				if (string.IsNullOrEmpty(series.Description) &&
+				(series.Stories?.Available ?? 0) == 0 &&
+				(series.Characters?.Available ?? 0) == 0 &&
+				(series.Events?.Available ?? 0) == 0)
+				{
+					continue; // Skip this series if all conditions are met
+				}
+
+				<div class="col mb-4">
+					<div class="card-seriesList" style="@((string.IsNullOrEmpty(series.Description) ? "max-height:100%;" : "")); width: 12rem;">
+						<a class="card-title-series text-center" asp-controller="Series" asp-action="Series" asp-route-Id="@series.Id">@series.Title</a>
+						<div class="card-img-wrapper-SeriesList">
+							<img src="@($"{series.Thumbnail.Path}.{series.Thumbnail.Extension}")"
+								 class="card-img-SeriesList" />
+						</div>
+						<div class="card-body-series">
+							<div>
+								<div class="card-section  description-section-series">
+									<span class="card-text series-card-details">Description: </span>
+									@if(!string.IsNullOrEmpty(series.Description))
+									{
+										<span class="series-Text-Description card-text-small"> @series.Description</span>
+									}
+									else
+									{
+										<span class="series-Text-Description-None">No Description Available</span>
+									}
+								</div>
+								<div class="card-section creators-section-series">
+									<span class="card-text series-card-details">Creators:</span>
+									<span class="series-Text-Creators">
+										@if (@series.Creators.Items.Any())
+										{
+											@foreach (var creator in series.Creators.Items.Take(4))
+											{
+												<span class="card-text card-text-small">* @creator.Name | @creator.Role</span>
+											}
+										}
+										else
+										{
+											<span class="card-text card-text-small">No Creators Available</span>
+										}
+									</span>
+								</div>
+								<div class="card-section characters-section-series">
+									<span class="card-text series-card-details">Characters:</span>
+									<span class="series-Text-Characters">
+										@if (@series.Characters.Items.Any())
+										{
+											@foreach (var character in series.Characters.Items.Take(4))
+											{
+												<span class="card-text card-text-small">* @character.Name</span>
+											}
+										}
+										else
+										{
+											<span class="card-text card-text-small">No Characters Available</span>
+										}
+								</div>
+								<div class="card-section info-section-series">
+									<span class="card-text series-card-details">Info</span>
+									<span class="card-text card-text-small"> Rating:
+										@if(series.Rating == "" || series.Rating == null)
+										{ 
+											string rating = "No Rating Available";
+											@rating
+										}
+										else
+										{
+											@series.Rating
+										}
+									</span>
+									<span class="card-text card-text-small">Start Year: @series.StartYear</span>
+									<span class="card-text card-text-small">End Year: @series.EndYear</span>
+									
+								</div>
+								<a class="card-text card-text-small moreDetails-section" href="@series.Urls.First().url" target="_blank">More Details</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+}
